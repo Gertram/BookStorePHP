@@ -1,0 +1,13 @@
+<div class="star-rating" role="img" aria-label="Rated 4 out of 5">
+    {% if raiting > 4 %}
+        <span>★★★★★</span>
+    {% elseif raiting > 3 %}
+        <span>★★★★☆</span>
+    {% elseif raiting > 2 %}
+        <span>★★★☆☆</span>
+    {% elseif raiting > 1 %}
+        <span>★★☆☆☆</span>
+    {% elseif raiting > 0 %}
+        <span>★☆☆☆☆</span>
+    {% endif %}
+</div>

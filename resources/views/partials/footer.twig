@@ -1,0 +1,130 @@
+<footer class="footer_wrap widget_area scheme_original">
+    <div class="footer_wrap_inner widget_area_inner">
+        <div class="content_wrap">
+            <div class="columns_wrap">
+                <div class="column-1_4">
+                    <aside id="booklovers_widget_socials-3" class="widget_number_1 widget widget_socials">
+                        <div class="widget_inner">
+                            <div class="logo">
+                                <a href="{{ route('index') }}"><img src="{{ asset('/img/footer-2.png') }}" class="logo_main" alt="footer-2" ><br>
+                                    <div class="logo_slogan">Your Favorite Bookshelf!</div>
+                                </a>
+                            </div>
+                            <div class="logo_descr">Наша миссия - дать клиентам возможность получать удовольствие
+                                качественные услуги по заказу и получению лучших книг. Выбери свой любимый
+                                бронируйте у нас!
+                            </div>
+                            {#<h6 class="social_title">Follow Us</h6>
+                            <div class="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
+                                <div class="sc_socials_item"><a href="https://www.facebook.com/AncoraThemes/"
+                                                                target="_blank"
+                                                                class="social_icons social_facebook"><span
+                                        class="icon-facebook"></span></a></div>
+                                <div class="sc_socials_item"><a href="https://twitter.com/ancora_themes"
+                                                                target="_blank"
+                                                                class="social_icons social_twitter"><span
+                                        class="icon-twitter"></span></a></div>
+                                <div class="sc_socials_item"><a href="https://www.instagram.com/ancora_themes/"
+                                                                target="_blank"
+                                                                class="social_icons social_instagramm"><span
+                                        class="icon-instagramm"></span></a></div>
+                            </div>#}
+                        </div>
+
+                    </aside>
+                </div>
+                <div class="column-1_4">
+                    <aside id="nav_menu-2" class="widget_number_2 widget widget_nav_menu">
+                        <div class="menu-footer-menu-container">
+                            <ul id="menu-footer-menu" class="menu">
+                                <li id="menu-item-644"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-644 has_children">
+                                    <a href="{{ route('search') }}">Информация</a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-643"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-643">
+                                            <a href="{{ route('about') }}">О Нас</a>
+                                        </li>
+                                        <li id="menu-item-645"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-645">
+                                            <a href="{{ route('contacts') }}">Контакты</a></li>
+                                        {#<li id="menu-item-646"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-646">
+                                            <a href="http://booklovers.ancorathemes.com/#">Cancellations</a>
+                                        </li>
+                                        <li id="menu-item-647"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-647">
+                                            <a href="http://booklovers.ancorathemes.com/#">Returns</a></li>
+                                        <li id="menu-item-648"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-648">
+                                            <a href="http://booklovers.ancorathemes.com/#">Delivery</a></li>
+                                        <li id="menu-item-650"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-650">
+                                            <a href="http://booklovers.ancorathemes.com/#">International
+                                                delivery</a></li>
+                                        <li id="menu-item-652"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-652">
+                                            <a href="http://booklovers.ancorathemes.com/#">Wish list</a></li>#}
+                                    </ul>
+                                </li>
+                                <li id="menu-item-653"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-653 has_children">
+                                    <a href="{{ route('shop') }}">Каталог</a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-654"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-654">
+                                            <a href="{{ route('orders') }}">Мои заказы</a></li>
+                                        {#<li id="menu-item-655"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-655">
+                                            <a href="http://booklovers.ancorathemes.com/#">Shop Collections</a>
+                                        </li>
+                                        <li id="menu-item-656"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-656">
+                                            <a href="http://booklovers.ancorathemes.com/#">Gift Cards</a></li>
+                                        <li id="menu-item-657"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-657">
+                                            <a href="http://booklovers.ancorathemes.com/#">Get Help</a></li>
+                                        <li id="menu-item-658"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-658">
+                                            <a href="http://booklovers.ancorathemes.com/#">FAQ</a></li>#}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <div class="column-1_4">
+                    <aside id="woocommerce_recent_reviews-3"
+                           class="widget_number_3 widget woocommerce widget_recent_reviews"><h5
+                            class="widget_title">Лидеры продаж</h5>
+                        <ul class="product_list_widget">
+                            {% for book in bestsellers %}
+                                <li>
+                                    <a href="{{ route('book',{id:book.book_id}) }}">
+                                        <img src="{{ asset('/img/') }}/{{book.img}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail">
+                                        <span class="product-title">{{ book.title }}</span>
+                                    </a>
+
+                                    {% include 'partials/raiting.twig' with {raiting:book.raiting} %}
+                                    <span class="reviewer">by ANC_admin</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </aside>
+                </div>
+                <div class="column-1_4">
+                    <aside id="text-6" class="widget_number_4 widget widget_text"><h5 class="widget_title">
+                        Контактная информация</h5>
+                        <div class="textwidget">
+                            <div class="footer_contact">
+                                <span class="address">Адрес:</span> <br>{{ general.address }}<br>
+                                <span class="phone">Телефон:</span> <span><a href="tel: {{ general.phone }}">{{ general.phone }}</a></span><br>
+                                <span class="email">Email:</span><a href="{{ general.email }}">{{ general.email }}</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

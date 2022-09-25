@@ -1,0 +1,18 @@
+<div class="list-item">
+    <figure class="sc_image  sc_image_shape_square"><img
+                src="{{ asset('/img') }}/{{ book.img }}"
+                alt=""></figure>
+    <h3 class="sc_title sc_title_regular sc_align_center margin_bottom_tiny"
+        style="margin-top: 1.4em;text-align:center;color:#121212;font-weight:700;font-size:1.059em;">
+        <a href="{{ route('book',{id:book.book_id}) }}">{{ book.title }}</a></h3>
+    <div class="wpb_text_column wpb_content_element ">
+        <div class="wpb_wrapper">
+            {% for author in book.authors %}
+                <p style="text-align: center;">{{ author.firstname }} {{ author.lastname }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <h5 class="sc_title sc_title_regular sc_align_center margin_top_tiny margin_bottom_null"
+        style="text-align:center;color:#de3241;font-weight:700;font-size:1.059em;">
+        {{ book.price // 100 }}.{{ book.price % 100 }}</h5>
+</div>

@@ -1,0 +1,34 @@
+<div class="isotope_item isotope_item_products isotope_item_products_6 isotope_column_6 isotope_item_show"
+     style="display:inline-block; vertical-align: top">
+    <div class="post_item post_item_products post_item_products_6 post_format_standard odd">
+        <div class="post_featured">
+            <div class="post_thumb">
+                <a class="hover_icon hover_icon_link"
+                   href="{{ route('book',{id:book.book_id}) }}"><img src="{{ asset('/img') }}/{{book.img}}"></a>
+            </div>
+        </div>
+        <div class="post_content isotope_item_content">
+            <h5 class="post_title"><a
+                    href="{{ route('book',{id:book.book_id}) }}">{{title}}</a></h5>
+            <div class="post_descr">
+                {% for author in book.authors %}
+                <div class="author_name">
+                    {{author.firstname}} {{ author.lastname }}
+                </div>
+                {% endfor %}
+                <style>
+                    .star-rating > span{
+                        font-size: 1.5em;
+                    }
+                </style>
+                {% include 'partials/raiting.twig' with {rating:book.raiting}%}
+                <div class="reviews_count">
+                    {{ book.reviews|length }} Отзывов
+                </div>
+
+
+            </div>
+
+        </div>                <!-- /.post_content -->
+    </div>    <!-- /.post_item -->
+</div>

@@ -1,0 +1,38 @@
+.shop-sidebar  {
+    width: 340px;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+
+
+.shop-content {
+    display: flex;
+}
+
+.shop-mainbar {
+    margin-top: 0;
+    flex: 1 auto;
+    padding: 10px;
+}
+
+.list-icon{
+    font-size: 2em;
+    margin:5px;
+}
+
+.woocommerce-loop-product__title{
+    font-size: 1.5em;
+}
+
+.item-list{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 8px;
+}
+
+.list-item{
+    display: block;
+    max-width: none;
+}

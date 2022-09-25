@@ -1,0 +1,11 @@
+<li>
+    <a href="{{ route('book',{id:book.book_id}) }}">
+        <img
+             src="{{ asset('/img') }}/{{book.img}}"
+             class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail">
+        <span class="product-title">{{book.title}}</span>
+    </a>
+    {% include 'partials/raiting.twig' with {raiting:book.raiting}%}
+    <span class="woocommerce-Price-amount amount"><bdi><div
+            class="woocommerce-Price-currencySymbol"></div>{{book.price // 100}}.{{ book.price % 100 }}</bdi></span>
+</li>
